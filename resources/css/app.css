@@ -1,11 +1,77 @@
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+h1 {
+    font-size: 3.5rem;
+}
+.user {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+    border: solid black 1px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-div {
+    display: none;
+    position: fixed;
+    top: 5%;
+    right: 1%;
+    background: rgb(208, 208, 208);
+    width: 5%;
+    height: 5%;
+}
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.user-div form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-logout {
+    background: red;
+    width: 90%;
+    height: 60%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+.button {
+    background: rgb(71, 71, 255);
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 1%;
+}
+.button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 25px;
 }

@@ -21,9 +21,11 @@ class LoginController extends Controller
             $isAdmin = auth()->user()->is_admin;
             if ($isAdmin) { 
                 session(['username' => 'admin']);
-                return redirect()->intended('/admin');
+                session(['is_admin' => true]);
+            } else {
+                session(['username' => 'posluchač']);
+                session(['is_admin' => false]);
             }
-            session(['username' => 'posluchač']);
             return redirect()->intended('/home');
         }
 
@@ -31,6 +33,12 @@ class LoginController extends Controller
         return redirect()->back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->withInput();
+    }
+
+    public function logout(Request $request) {
+        auth()->logout();
+        $request->session()->invalidate();
+        return redirect('/login');
     }
 
     public function register(Request $request) {

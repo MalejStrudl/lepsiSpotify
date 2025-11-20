@@ -10,6 +10,5 @@
     <h1>Glg</h1>
     <p>{{session('username')}}</p>
     <button>Přidat Playlist</button>
-    <a href="{{route('playlist.list')}}">Seznam Playlistů</a>
 </body>
 </html>
