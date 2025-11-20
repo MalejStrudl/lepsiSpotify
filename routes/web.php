@@ -29,3 +29,5 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/login.register', [LoginController::class, 'register'])->name('register');
 Route::post('/admin.add', [playlistController::class, 'addPlaylist'])->name('playlist.addPlaylist');
+Route::post('/admin.addspec', [playlistController::class, 'addSpecification'])->name('playlist.addSpecification');
+Route::post('/admin.selspec', [playlistController::class, 'selectSpecification'])->name('selectSpecification');

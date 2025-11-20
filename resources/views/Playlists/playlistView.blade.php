@@ -11,7 +11,7 @@
             <li><a class="niga" data-path="../../storage/app/public/{{$song->path}}">{{ $song->title }}</a></li>
         @endforeach
     </ul>
-    @include('player');
+    @include('player')
 </body>
 <script src="../../resources/js/playmusic.js"></script>
 @endsection
