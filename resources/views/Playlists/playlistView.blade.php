@@ -8,7 +8,7 @@
     <h1>Songs in Playlist</h1>
     <ul>
         @foreach($songs as $song)
-            <li><a class="niga" data-path="../../storage/app/public/{{$song->path}}">{{ $song->title }}</a></li>
+            <li><a class="niga" data-path="../../storage/app/public/{{$song->path}}"><div class="song-div"><img src="{{asset('img/music.png')}}" alt="">{{ $song->title }}</div></a></li>
         @endforeach
     </ul>
     @include('player')

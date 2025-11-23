@@ -35,6 +35,13 @@ h2 {
     height: 20vh;
     align-items: center;
 }
+.song-div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
 .progressBar {
     display: flex;
     flex-direction: column;

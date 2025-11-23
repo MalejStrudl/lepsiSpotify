@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('specifikations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('playlist_id')->foreign()->references('id')->on('playlists')->onDelete('cascade')->default(0);
+            $table->integer('importance')->default(1);
             $table->timestamps();
         });
     }

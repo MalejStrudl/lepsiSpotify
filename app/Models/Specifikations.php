@@ -10,6 +10,6 @@ class Specifikations extends Model
 
     protected $fillable = [
         'name',
-        'playlist_id',
+        'importance',
     ];
 }
