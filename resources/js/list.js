@@ -7,3 +7,15 @@ for (let i = 0; i < checks.length; i++) {
         box.checked = !box.checked;
     });   
 }
+
+let addBtn = document.getElementById('addSpec');
+let div = document.getElementsByClassName('addSpecDiv');
+addBtn.addEventListener('click', showMenu);
+
+function showMenu() {
+    
+    div[0].classList.toggle('showMenu');
+}
+
+let cross = document.getElementById('cross');
+cross.addEventListener('click', showMenu);

@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to left, #222222, #161616);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -1px 10px 1px black;
+}
+.body {
+    justify-content: flex-start;
+    overflow-y: hidden;
+}
+header {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+}
+img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+h2 {
+    font-size: 2rem;
+}
+#songName {
+    position: absolute;
+    left: 20px;
+}
+#pauseBtn {
+    display: none;
+}
+.song-play {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 10vh;
+    align-items: center;
+    margin: 10px;
+}
+.song-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30vw;
+    gap: 15px;
+    color: white;
+}
+.songs {
+    background: linear-gradient(to left, #1f1f1f, #151515);
+    width: 52vw;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 3px #5a5a5a;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+li {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+}
+.niga {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background:none;
+    cursor: pointer;
+    height: 100%;
+    transition: 0.3s;
+}
+.niga:hover {
+    background-color: #3d3d3d;
+}
+.name {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.progressBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#progressBar {
+    width: 30vw;
+    height: 30px;
+    
+}
+.note {
+    width: 20px;
+    height: 20px;
+}
+li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+.playingBtn {
+    margin-left: 10px;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+}
+.playingBtn:hover {
+    border: none;
+}
+.buttons {
+    display: flex;
+}
+.auto {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    background: rgb(35, 35, 35);
+    border-radius: 10px;
+    border: solid 3px rgb(77, 77, 77);
+    padding: 15px;
+}
+#autoplay {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+progress::-moz-progress-bar { background: #3b82f6; }
+#progressBar::-webkit-progress-value {
+    background: #3b82f6;
+}
+progress { color: #3b82f6; }

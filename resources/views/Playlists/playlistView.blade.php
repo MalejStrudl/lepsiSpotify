@@ -1,17 +1,20 @@
     @extends('layout')
     @section('links')
-    <link rel="stylesheet" href="../../resources/css/player.css">
+    <link rel="stylesheet" href="{{asset('css/player.css')}}">
     @endsection
     @section('title', 'Playlist View')
     @section('content')
-<body>
-    <h1>Songs in Playlist</h1>
-    <ul>
+<body class="body">
+    @include('navbar')
+    <header>
+        <h1>{{$playlist}}</h1>
+
+    </header>
+    <ul class="songs">
         @foreach($songs as $song)
-            <li><a class="niga" data-path="../../storage/app/public/{{$song->path}}"><div class="song-div"><img src="{{asset('img/music.png')}}" alt="">{{ $song->title }}</div></a></li>
+            <li><a class="niga" data-path="{{ asset('storage/' . $song->path) }}"><div class="song-div"><img src="{{asset('img/note.png')}}" alt="" class="note"><p class="name">{{ $song->title }}</p></div></a></li>
         @endforeach
     </ul>
     @include('player')
 </body>
-<script src="../../resources/js/playmusic.js"></script>
 @endsection

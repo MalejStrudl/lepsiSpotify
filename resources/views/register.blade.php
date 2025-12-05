@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrovat</title>
-</head>
+@extends('layout')
+    @section('title', 'Zaregistrovat se')
+    @section('links')
+    <link rel="stylesheet" href="{{asset('/css/login.css')}}">
+    @endsection
+    @section('content')
 <body>
-    <form action="{{route('register')}}" method="POST">
+    @include('navbar')
+    <header>
+        <h1>Zaregistrovat se</h1>
+    <form action="{{route('registerPost')}}" method="POST">
         @csrf
-        <input type="email" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password_confirmation" placeholder="Password">
+        <div class="form-content">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" placeholder="e-mail">
+            <label for="password">Heslo:</label>
+            <input type="password" name="password" placeholder="heslo">
+            <label for="password">Potvrďte heslo:</label>
+            <input type="password" name="password_confirmation" placeholder="potvrďte heslo">
+        </div>
         <button type="submit">Zaregistrovat</button>
     </form>
+    <a href="{{route('login')}}">Přihlásit se</a>
+    </header>
 </body>
-</html>
+@endsection

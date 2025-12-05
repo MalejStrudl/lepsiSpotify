@@ -87,13 +87,18 @@ class playlistController extends Controller
 
     public function addPlaylist(Request $request)
     {
+        $messages = [
+            'specifications.required' => 'Specifikace jsou povinné',
+            'specifications.min' => 'Vyberte všechny specifikace'
+        ];
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
             'songs' => 'nullable|array',
+            'specifications' => 'required|array|min:3',
             'specifications.*' => 'required',
             'paths.*' => 'file|mimes:mp3,wav,ogg|max:20000',
-        ]);
+        ], $messages);
 
         $playlist = Playlists::create([
             'name' => $validatedData['name'],
@@ -113,7 +118,7 @@ class playlistController extends Controller
                 'playlist_id' => $playlist->id,
             ]);
         }
-        $specifications = $validatedData['specifications'];
+        $specifications = $validatedData['specifications'] ?? [];
         foreach ($specifications as $spec) {
             SpecifikationsPlaylists::create([
                 'id_spec' => $spec,
@@ -127,7 +132,7 @@ class playlistController extends Controller
     {
         $playlist = Playlists::where('name', $playlistName)->first();
         $songs = Songs::where('playlist_id', $playlist->id)->get();
-        return view('Playlists/playlistView', ['songs' => $songs]);
+        return view('Playlists/playlistView', ['songs' => $songs, 'playlist' => $playlistName]);
     }
 
     public function addSpecification(Request $req) {
