@@ -76,8 +76,8 @@
 
         </div>
     </section>
-@include('player')
 </body>
+    @include('player')
 <script src="../resources/js/list.js"></script>
 </html>
 @endsection

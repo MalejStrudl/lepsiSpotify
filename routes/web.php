@@ -10,9 +10,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 })->name('home');
-Route::get('/admin', function () {
-    return view('admin');
-});
+
 
 Route::get('/login', function () {
     return view('login');

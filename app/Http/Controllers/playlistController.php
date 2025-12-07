@@ -130,9 +130,11 @@ class playlistController extends Controller
 
     public function playlistView($playlistName)
     {
+        $allPlaylists = Playlists::all();
+        $allSongs = Songs::all();
         $playlist = Playlists::where('name', $playlistName)->first();
         $songs = Songs::where('playlist_id', $playlist->id)->get();
-        return view('Playlists/playlistView', ['songs' => $songs, 'playlist' => $playlistName]);
+        return view('Playlists/playlistView', ['songs' => $songs, 'playlist' => $playlistName, 'allPlaylists' => $allPlaylists, 'allSongs' => $allSongs]);
     }
 
     public function addSpecification(Request $req) {
@@ -147,6 +149,4 @@ class playlistController extends Controller
         ]);
         return redirect()->back();
     }
-
-    
 }

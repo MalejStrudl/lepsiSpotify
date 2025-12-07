@@ -143,3 +143,28 @@ progress::-moz-progress-bar { background: #3b82f6; }
     background: #3b82f6;
 }
 progress { color: #3b82f6; }
+.queue {
+    position: absolute;
+    right: 5px;
+    top: 50vh;
+}
+.queue-btn {
+    display: flex;
+    width: 10vw;
+    background: rgb(20,20,20);
+    border-radius: 10px;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+.queue-btn img {
+    height: 30px;
+    width: 30px;
+}
+.queue-container {
+    border: white 2px solid;
+    background: green;
+}
+#song-container {
+    display: none;
+}

@@ -109,7 +109,7 @@ window.addEventListener("keydown", function(e) {
 });
 
 window.addEventListener("beforeunload", () => {
-    //localStorage.setItem("audioTime", audioPlayer.currentTime);
+    localStorage.setItem("audioTime", audioPlayer.currentTime);
     // Uložení stavu přehrávání také zde pro jistotu
     localStorage.setItem("audioPlaying", !audioPlayer.paused);
 });
@@ -136,7 +136,7 @@ window.addEventListener("load", () => {
                 audioPlayer.currentTime = parseFloat(savedTime);
             }
 
-            if (savedPlaying === "true") {
+            if (savedPlaying == true) {
                 audioPlayer.play().catch(() => {});
             } else {
             }

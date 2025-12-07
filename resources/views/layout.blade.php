@@ -26,5 +26,5 @@
     @else
     <a class="user" href="{{route('login')}}">Přihlásit se</a>
     @endif
-<script src="{{asset('js/playmusic.js')}}"></script>
+    <script src="{{asset('js/playmusic.js')}}"></script>
 </html>
